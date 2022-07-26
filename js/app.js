@@ -63,7 +63,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   mulABC = multiply(mulABC,c)[0];
   let mulString = `The product of ${a} and ${b} and ${c} is ${mulABC}.`;
   let result = [sumABC, mulABC, sumString, mulString];
-   return result;
+  return result;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -76,21 +76,26 @@ testSumAndMultiply(4,7,5);
 Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
-
+2, 3, 4 was passed in as an array of numbers, and 9 is their sum.
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
+
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  let sumOfABC = sum(sumArr[0], sumArr[1])[0];
+  sumOfABC = sum(sumOfABC, sumArr[2])[0];
+  let ChocoTaco= `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumOfABC} is their sum.`;
+  console.log(ChocoTaco);
+  return [sumOfABC, ChocoTaco];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -106,11 +111,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  let mulABC = multiply(multArr[0], multArr[1])[0];
+  mulABC = multiply(mulABC, multArr[2])[0];
+  let MexicanPizza=`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${mulABC}.`;
+  return[mulABC, MexicanPizza];
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
